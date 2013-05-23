@@ -1,0 +1,41 @@
+<%= form_for(@apero) do |f| %>
+  <% if @apero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@apero.errors.count, "error") %> prohibited this apero from being saved:</h2>
+
+      <ul>
+      <% @apero.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :hour %><br />
+    <%= f.time_select :hour %>
+  </div>
+  <div class="field">
+    <%= f.label :visibility %><br />
+    <%= f.text_field :visibility %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.text_field :category_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

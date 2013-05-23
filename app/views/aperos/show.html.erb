@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @apero.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @apero.content %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @apero.date %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%= @apero.hour %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= User.find(@apero.user_id).email %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @apero.visibility %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= Category.find(@apero.category_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_apero_path(@apero) %> |
+<%= link_to 'Back', aperos_path %>

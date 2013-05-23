@@ -1,0 +1,35 @@
+<h1>Listing aperos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th>Date</th>
+    <th>Hour</th>
+    <th>User</th>
+    <th>Visibility</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aperos.each do |apero| %>
+  <tr>
+    <td><%= apero.name %></td>
+    <td><%= apero.content %></td>
+    <td><%= apero.date %></td>
+    <td><%= apero.hour %></td>
+    <td><%= User.find(apero.user_id).email %></td>
+    <td><%= apero.visibility %></td>
+    <td><%= Category.find(apero.category_id).name %></td>
+    <td><%= link_to 'Show', apero %></td>
+    <td><%= link_to 'Edit', edit_apero_path(apero) %></td>
+    <td><%= link_to 'Destroy', apero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Apero', new_apero_path %>
