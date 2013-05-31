@@ -35,6 +35,7 @@
   <%= Category.find(@apero.category_id).name %>
 </p>
 
-
-<%= link_to 'Edit', edit_apero_path(@apero) %> |
-<%= link_to 'Back', aperos_path %>
+<% if can? :edit, @apero %>
+<%= link_to 'Modifier', edit_apero_path(@apero) %> |
+<% end %> 
+<%= link_to 'Retour', aperos_path %>

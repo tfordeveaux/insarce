@@ -2,6 +2,7 @@ class AperosController < ApplicationController
   # GET /aperos
   # GET /aperos.json
   before_filter :authenticate_user!, :except => [:index]
+  load_and_authorize_resource
   def index
  
     @aperos = Apero.all
